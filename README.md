@@ -1,2 +1,2 @@
 # Tecnocity
-Catalogo de articulos
+Catálogo de artículos
