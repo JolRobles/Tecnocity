@@ -1,0 +1,82 @@
+{% extends "admin/base.html" %}
+{% load static %}
+{% load bootstrap5 %}
+{% block content %}
+<div class="right_col" role="main">
+  <div id="bootstrap_messages" style="margin-top:5em;">
+    {% bootstrap_messages %}
+  </div>
+  <div class="">
+
+      <div class="clearfix"></div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 ">
+        <div class="x_panel">
+          <div class="x_title">
+            <h3>Lista de miembros del equipo</h3>
+            <a href="{% url 'empresas:team' %}" class="btn btn-success btn-sm">
+              <span class="glyphicon glyphicon-plus"></span> Nuevo
+            </a>
+
+          </div>
+          <div class="x_content">
+            <div class="clearfix"></div>
+
+              <div class="row">
+                  <div class="col-sm-12">
+                    <div class="card-box table-responsive">
+            <table id="datatable" class="table table-striped table-bordered" style="width:100%">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Imagen</th>
+                  <th>Nombre</th>
+                  <th>Cargo Ocupado</th>
+                  <th>Descripción</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                  {% for team in teams %}
+                  <tr>
+                    <td>{{ team.id }} </td>
+                    <td>
+                      {% if team.imagen %}
+                        <div class="thumb">
+                          <img src="{{ team.imagen.url }}" width="75" height="85" alt="{{ team.imagen }}"
+                            style="border-radius: 1em !important;">
+                        </div>
+                      {% else %}
+                          No hay imagen
+                      {% endif %}
+                  </td>
+                  <td>{{ team.nombre }} </td>
+                  <td>{{ team.cargo_ocupado }} </td>
+                    <td>{{ team.descripción }} </td>
+                    <td>
+                      <a href="{% url 'empresas:team_detail' team.pk %}" type='GET'>
+    											<span class="btn btn-success btn-xs glyphicon glyphicon-eye-open" aria-hidden="true" title="Ver"></span>
+    										</a>
+                      <a href="{% url 'empresas:team_edit' team.pk %}" type='GET'>
+    											<span class="btn btn-primary btn-xs glyphicon glyphicon-edit" aria-hidden="true" title="Editar"></span>
+    										</a>
+                      <a href="{% url 'empresas:team_delete' team.pk %}"  type='GET'>
+    											<span class="btn btn-danger btn-xs glyphicon glyphicon-remove" aria-hidden="true" title="Eliminar"></span>
+    										</a>
+                    </td>
+                  </tr>
+                  {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          </div>
+      </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      {% endblock content %}

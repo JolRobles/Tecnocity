@@ -1,0 +1,78 @@
+{% extends "admin/base.html" %}
+{% load static %}
+{% load bootstrap5 %}
+{% block content %}
+<div class="right_col" role="main">
+  <div id="bootstrap_messages" style="margin-top:5em;">
+    {% bootstrap_messages %}
+  </div>
+  <div class="">
+
+      <div class="clearfix"></div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 ">
+        <div class="x_panel">
+          <div class="x_title">
+            <h3>Lista de marcas</h3>
+            <a href="{% url 'articulos:marca_create' %}" class="btn btn-success btn-sm">
+              <span class="glyphicon glyphicon-plus"></span> Nuevo
+            </a>
+
+          </div>
+          <div class="x_content">
+            <div class="clearfix"></div>
+
+              <div class="row">
+                  <div class="col-sm-12">
+                    <div class="card-box table-responsive">
+            <table id="datatable" class="table table-striped table-bordered" style="width:100%">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Imagen</th>
+                  <th>Nombre</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                  {% for marca in marcas %}
+                  <tr>
+                    <td>{{ marca.id }} </td>
+                    <td>
+                      {% if marca.img_marca %}
+                        <div class="thumb">
+                          <img src="{{ marca.img_marca.url }}" width="75" height="85" alt="{{ marca.img_marca }}"
+                            style="border-radius: 1em !important;">
+                        </div>
+                      {% else %}
+                          No hay imagen
+                      {% endif %}
+                  </td>
+                    <td>{{ marca.nombre }} </td>
+                    <td>
+                      <a href="{% url 'articulos:marca_detail' marca.pk %}" type='GET'>
+    											<span class="btn btn-success btn-xs glyphicon glyphicon-eye-open" aria-hidden="true" title="Ver"></span>
+    										</a>
+                      <a href="{% url 'articulos:marca_edit' marca.pk %}" type='GET'>
+    											<span class="btn btn-primary btn-xs glyphicon glyphicon-edit" aria-hidden="true" title="Editar"></span>
+    										</a>
+                      <a href="{% url 'articulos:marca_delete' marca.pk %}"  type='GET'>
+    											<span class="btn btn-danger btn-xs glyphicon glyphicon-remove" aria-hidden="true" title="Eliminar"></span>
+    										</a>
+                    </td>
+                  </tr>
+                  {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          </div>
+      </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      {% endblock content %}

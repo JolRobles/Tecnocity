@@ -1,0 +1,84 @@
+{% extends "admin/base.html" %}
+{% load static %}
+{% load bootstrap5 %}
+
+{% block content %}
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <!-- top tiles -->
+          <div class="row" style="display: inline-block;" >
+          <div class="tile_count">
+            <div class="col-md-2 col-sm-4  tile_stats_count">
+              <span class="count_top"><i class="fa fa-user"></i> Total estudiantes</span>
+              <div class="count green">{{estudiantes}}</div>
+            </div>
+            <div class="col-md-2 col-sm-4  tile_stats_count">
+              <span class="count_top"><i class="fa fa-clock-o"></i> Matriculados</span>
+              <div class="count green">{{matriculados}}</div>
+            </div>
+            <div class="col-md-2 col-sm-4  tile_stats_count">
+              <span class="count_top"><i class="fa fa-user"></i> M. Pendientes</span>
+              <div class="count red">{{matriculas_pendientes}}</div>
+            </div>
+            <div class="col-md-2 col-sm-4  tile_stats_count">
+              <span class="count_top"><i class="fa fa-user"></i> Nro Cursos</span>
+              <div class="count blue">{{cursos}}</div>
+            </div>
+            <div class="col-md-2 col-sm-4  tile_stats_count">
+              <span class="count_top"><i class="fa fa-user"></i> Nro Paralelos</span>
+              <div class="count blue">{{paralelos}}</div>
+            </div>
+            <div class="col-md-2 col-sm-4  tile_stats_count">
+              <span class="count_top"><i class="fa fa-user"></i> Nro Usuarios</span>
+              <div class="count blue">{{usuarios}}</div>
+            </div>
+            <div class="col-md-2 col-sm-4  tile_stats_count">
+            </div>
+          </div>
+        </div>
+
+          <!-- /top tiles -->
+
+          <div class="row">
+            <div class="col-md-12 col-sm-12 ">
+              <div class="dashboard_graph">
+
+
+
+
+                <div class="col-md-6 col-sm-6 ">
+          <div class="row">
+
+
+
+                <div class="x_content">
+
+                  <div class="dashboard-widget-content">
+
+                    <h3>Preguntas Frecuentes</h3>
+                    <ul class="list-unstyled timeline widget">
+                      <li>
+                        <div class="block">
+                          <div class="block_content">
+                            <h2 class="title">
+                                <a style="text-align: justify">{{ pregunta.pregunta }}</a>
+                            </h2>
+                            <br/>
+                            <p class="excerpt" style="text-align: justify">{{pregunta.respuesta}}</p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <img src="{% static 'admin/images/tecnocity.jpg' %}" alt="..." class="img-circle profile_img">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <!-- /page content -->
+        {% endblock content %}

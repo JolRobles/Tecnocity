@@ -1,0 +1,91 @@
+{% extends "admin/base.html" %}
+{% load static %}
+{% load bootstrap5 %}
+{% block content %}
+
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>Detalle del Articulo</h3>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="x_panel">
+                    <div class="x_content">
+                      <div class="col-md-6 col-sm-6">
+
+                        <h2>
+                          <strong>Nombre:</strong>
+                          <spam>{{object.nombre}}</spam>
+                        </h2>
+
+                        <h2>
+                          <strong>Descripción:</strong>
+                          <span>{{ object.descripcion }}</span>
+                        </h2>
+                        <h2>
+                          <strong>Categoría:</strong>
+                          <span>{{ object.categoria }}</span>
+                        </h2>
+                        <h2>
+                          <strong>Marca:</strong>
+                          <span>{{ object.marca }}</span>
+                        </h2>
+                        <h2>
+                          <strong>Cartacterísticas:</strong>
+                          <span>{{ object.caracteristicas }}</span>
+                        </h2>
+                        <h2>
+                          <strong>Precio de compra:</strong>
+                          <span>{{ object.precio_compra }}</span>
+                        </h2>
+                        <h2>
+                          <strong>Pvp:</strong>
+                          <span>{{ object.pvp }}</span>
+                        </h2>
+                        <h2>
+                          <strong>Stock:</strong>
+                          <span>{{ object.stock }}</span>
+                        </h2>
+                        <h2>
+                          <strong>Es nuevo:</strong>
+                          {% if object.is_nuevo %}<img src="/static/admin/img/icon-yes.svg" alt="Si">
+        									 {% else %} <img src="/static/admin/img/icon-no.svg" alt="No"> {% endif %}
+                        </h2>
+                        <h2>
+                          <strong>Es oferta:</strong>
+                          <span>{% if object.is_pferta %}<img src="/static/admin/img/icon-yes.svg" alt="Si">
+        									 {% else %} <img src="/static/admin/img/icon-no.svg" alt="No"> {% endif %}</span>
+                        </h2>
+                      </div>
+                      <div class="">
+                        <h2>
+                          <strong>Imagen:</strong>
+                          {% if object.img_producto %}
+                          <div class="">
+                            <img src="{{ object.img_producto.url }}" width="250" height="250" alt="{{ object.img_producto }}"
+                            style="border-radius: 1em !important;">
+                          </div>
+                          {% else %}
+                          No hay imagen
+                          {% endif %}
+                        </h2>
+                      </div>
+
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+
+                      <div style="display: flex; justify-content: center;">
+                        <a href="{% url 'articulos:articulos_list' %}" class="btn btn-primary">Regresar</a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
