@@ -1,26 +1,37 @@
-{% load static %}
-{% load bootstrap5 %}
+{% load static %} {% load bootstrap5 %}
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Iniciar Sesión | </title>
+    <title>Iniciar Sesión |</title>
 
     <!-- Bootstrap -->
-    <link href="{% static 'vendors/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link
+      href="{% static 'vendors/bootstrap/dist/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+    />
     <!-- Font Awesome -->
-    <link href="{% static 'vendors/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link
+      href="{% static 'vendors/font-awesome/css/font-awesome.min.css' %}"
+      rel="stylesheet"
+    />
     <!-- NProgress -->
-    <link href="{% static 'vendors/nprogress/nprogress.css' %}" rel="stylesheet">
+    <link
+      href="{% static 'vendors/nprogress/nprogress.css' %}"
+      rel="stylesheet"
+    />
     <!-- Animate.css -->
-    <link href="{% static 'vendors/animate.css/animate.min.css' %}" rel="stylesheet">
+    <link
+      href="{% static 'vendors/animate.css/animate.min.css' %}"
+      rel="stylesheet"
+    />
 
     <!-- Custom Theme Style -->
-    <link href="{% static 'build/css/custom.min.css' %}" rel="stylesheet">
+    <link href="{% static 'build/css/custom.min.css' %}" rel="stylesheet" />
   </head>
 
   <body class="login">
@@ -29,42 +40,55 @@
       <a class="hiddenanchor" id="signin"></a>
 
       <div class="login_wrapper">
-
         <div class="animate form login_form">
           <div>
             <div class="col-md-12 col-sm-12">
-              <img src="{% static 'images/logo_sanjuanbautista.jpeg' %}" alt="..." class="img-circle profile_img">
+              <img
+                src="{% static 'images/logo_sanjuanbautista.jpeg' %}"
+                alt="..."
+                class="img-circle profile_img"
+              />
             </div>
-            <div   align="center" class="col-md-12 col-sm-12">
+            <div align="center" class="col-md-12 col-sm-12">
               <strong><p>UNIDAD EDUCATIVA FISCOMISIONAL</p></strong>
-            <strong><p>"SAN JUAN BAUTISTA"</p></strong>
-          </div>
+              <strong><p>"SAN JUAN BAUTISTA"</p></strong>
+            </div>
           </div>
           <section class="login_content">
             <form method="POST" enctype="multipart/form-data">
-              <div   align="center" class="col-md-12 col-sm-12">
-              <h1>Iniciar Sesión</h1>
-            </div>
-              {% csrf_token %}
-              {% bootstrap_form form_login layout='inline' %}
-
-
-                <button class="btn btn-sm btn-success" type="submit">
-                  <i class="fa fa-dot-circle-o"></i>  Iniciar Sesion</button>
-                <!-- <a class="reset_pass" href="#">Olvidaste tu contraseña</a> -->
+              <div align="center" class="col-md-12 col-sm-12">
+                <h1>Iniciar Sesión</h1>
+              </div>
+              {% csrf_token %} 
+              
+              {# % bootstrap_form form_login layout='inline' % #}
+              {% for field in form_login %}
+                {% bootstrap_field field %}
+              {% endfor %}
+              <button class="btn btn-sm btn-success" type="submit">
+                <i class="fa fa-dot-circle-o"></i> Iniciar Sesion
+              </button>
+              <!-- <a class="reset_pass" href="#">Olvidaste tu contraseña</a> -->
 
               <div class="clearfix"></div>
 
               <div class="separator">
-                <p class="change_link">No estas registrado?
-                  <a href="#signup" class="to_register" id="link_register" onclick="is_register()"> Regístrate </a>
+                <p class="change_link">
+                  No estas registrado?
+                  <a
+                    href="#signup"
+                    class="to_register"
+                    id="link_register"
+                    onclick="is_register()"
+                  >
+                    Regístrate
+                  </a>
                 </p>
 
                 <div class="clearfix"></div>
                 <br />
 
                 <h1><i class="fa fa-university"></i>Sistema de Matrículas</h1>
-
               </div>
             </form>
           </section>
@@ -73,29 +97,57 @@
         <div id="register" class="animate form registration_form">
           <div>
             <div class="col-md-12 col-sm-12">
-              <img src="{% static 'images/logo_sanjuanbautista.jpeg' %}" alt="..." class="img-circle profile_img">
+              <img
+                src="{% static 'images/logo_sanjuanbautista.jpeg' %}"
+                alt="..."
+                class="img-circle profile_img"
+              />
             </div>
-            <div   align="center" class="col-md-12 col-sm-12">
+            <div align="center" class="col-md-12 col-sm-12">
               <strong><p>UNIDAD EDUCATIVA FISCOMISIONAL</p></strong>
-            <strong><p>"SAN JUAN BAUTISTA"</p></strong>
-          </div>
+              <strong><p>"SAN JUAN BAUTISTA"</p></strong>
+            </div>
           </div>
           <section class="login_content">
-            <form  method="POST" action="{% url 'login' %}" id="register" enctype="multipart/form-data">
-              <div   align="center" class="col-md-12 col-sm-12">
-              <h1>Regístrate</h1>
-            </div>
-                {% csrf_token %}
-                {% bootstrap_form form_register layout='inline' %}
-                <input type="hidden" name="is_register" value="" id="is_register" >
-                <button class="btn btn-sm btn-success" type="submit">
-                  <i class="fa fa-dot-circle-o"></i>Registrarse</button>
+            <form
+              method="POST"
+              action="{% url 'login' %}"
+              id="register"
+              enctype="multipart/form-data"
+            >
+              <div align="center" class="col-md-12 col-sm-12">
+                <h1>Regístrate</h1>
+              </div>
+              {% csrf_token %} 
+              {% comment %}
+              { % bootstrap_form form_register layout='inline' % }
+              {% endcomment %}
+              {% for field in form_register %} 
+                {% bootstrap_field field %} 
+              {% endfor %}
+              <input
+                type="hidden"
+                name="is_register"
+                value=""
+                id="is_register"
+              />
+              <button class="btn btn-sm btn-success" type="submit">
+                <i class="fa fa-dot-circle-o"></i>Registrarse
+              </button>
 
               <div class="clearfix"></div>
 
               <div class="separator">
-                <p class="change_link">Ya estas registrado?
-                  <a href="#signin" class="to_register" id="link_login" onclick="is_login()"> Iniciar sesión </a>
+                <p class="change_link">
+                  Ya estas registrado?
+                  <a
+                    href="#signin"
+                    class="to_register"
+                    id="link_login"
+                    onclick="is_login()"
+                  >
+                    Iniciar sesión
+                  </a>
                 </p>
 
                 <div class="clearfix"></div>
@@ -112,16 +164,15 @@
     </div>
   </body>
   <script type="text/javascript" id="register">
-
-  function is_register(){
-    let register = document.getElementById('is_register')
-    register.value = 'True'
-    console.log(register)
-  }
-  function is_login(){
-    let register = document.getElementById('is_register')
-    register.value = 'False'
-    console.log(register)
-  }
-</script>
+    function is_register() {
+      let register = document.getElementById("is_register");
+      register.value = "True";
+      console.log(register);
+    }
+    function is_login() {
+      let register = document.getElementById("is_register");
+      register.value = "False";
+      console.log(register);
+    }
+  </script>
 </html>
