@@ -216,10 +216,11 @@ header {
     transition: all 0.3s ease-in-out 0s;
 }
 header .navbar {
-	padding: 17px 0px;
+	padding: 15px;
+	height: 100%;
 }
 .background-header .navbar {
-	padding: 17px 0px;
+	padding: 15px;
 }
 .background-header {
 	top: 0;
@@ -227,7 +228,7 @@ header .navbar {
 	background-color: #fff!important;
 	box-shadow: 0px 1px 10px rgba(0,0,0,0.1);
 }
-.background-header .navbar-brand h2 {
+.background-header .navbar-brand {
 	color: #121212!important;
 }
 .background-header .navbar-nav a.nav-link {
@@ -242,20 +243,18 @@ header .navbar {
 }
 .navbar .navbar-brand {
 	float: 	left;
-	margin-top: -12px;
 	outline: none;
 }
-.navbar .navbar-brand h2 {
+.navbar .navbar-brand {
 	color: #fff;
-	text-transform: uppercase;
-	font-size: 24px;
-	font-weight: 700;
+	font-size: x-large;
+    font-weight: 900;
 	-webkit-transition: all .3s ease 0s;
     -moz-transition: all .3s ease 0s;
     -o-transition: all .3s ease 0s;
     transition: all .3s ease 0s;
 }
-.navbar .navbar-brand h2 em {
+.navbar .navbar-brand em {
 	font-style: normal;
 	color: #2AACFC;
 }
@@ -274,18 +273,30 @@ header .navbar {
 	font-weight: 500;
 	letter-spacing: 0.5px;
 	color: #fff;
-	transition: all 0.5s;
-	margin-top: 5px;
+	transition: all 0.2s;
+	border-bottom: 3px solid rgba(255,0,0,0);
+
 }
-.navbar .navbar-nav .nav-link:hover,
+/* .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .active>.nav-link,
 .navbar .navbar-nav .nav-link.active,
 .navbar .navbar-nav .nav-link.show,
 .navbar .navbar-nav .show>.nav-link {
 	color: #fff;
 	padding-bottom: 25px;
+	border-bottom: 3px solid #15ff00;
+} */
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .active>.nav-link,
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link.show,
+.navbar .navbar-nav .show>.nav-link {
+	color: #fff;
 	border-bottom: 3px solid #2AACFC;
 }
+
+
 .navbar .navbar-toggler-icon {
 	background-image: none;
 }
@@ -1004,17 +1015,15 @@ footer .inner-content p a {
 }
 
 @media (max-width: 992px) {
-	.navbar .navbar-brand {
+	/* .navbar .navbar-brand {
 		position: absolute;
-		left: 30px;
-		top: 32px;
 	}
 	.navbar .navbar-brand {
 		width: auto;
 	}
 	.navbar:after {
 		display: none;
-	}
+	} */
 	#navbarResponsive {
 	    z-index: 99999;
 	    position: absolute;
