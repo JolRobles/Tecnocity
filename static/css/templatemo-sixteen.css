@@ -345,7 +345,7 @@ header .navbar {
 
 .banner-item-03 {
 	padding: 300px 0px;
-	background-image: url(../img/slide_03.png);
+	background-image: url(../img/slide_03.pngww);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -415,7 +415,8 @@ header .navbar {
 /* Latest Produtcs */
 
 .latest-products {
-	margin-top: 100px;
+	padding-top: 100px;
+	background-color: #fff;
 }
 
 .latest-products .section-heading a {
