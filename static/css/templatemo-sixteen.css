@@ -324,12 +324,12 @@ header .navbar {
 .banner {
 	position: relative;
 	text-align: center;
-	padding-top: 80px;
+	/* padding-top: 80px; */
 }
 
 .banner-item-01 {
 	padding: 300px 0px;
-	background-image: url(../img/slide_01.jpg);
+	background-image: url(../img/slide_01.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;

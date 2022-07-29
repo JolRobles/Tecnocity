@@ -31,6 +31,7 @@
 
     {% block body %}
     <!-- ***** Preloader Start ***** -->
+    <!-- necesario para que se meustra una pantalla de carga antes de que se cargue la pagina -->
     <div id="preloader">
         <div class="jumper">
             <div></div>
@@ -42,7 +43,7 @@
         {% block header %}
         <!-- Header -->
         <header class="">
-          <nav class="navbar navbar-expand-lg">
+          <nav class="navbar navbar-expand-lg" style="height:80px">
               <a class="navbar-brand" href="{% url 'landing:index' %}">TECNO <em>CITY</em></a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -108,15 +109,15 @@
 
 
     <!-- Additional Scripts -->
-    <script src="{% static 'js/custom.js' %}"></script>
     <script src="{% static 'js/owl.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
     <script src="{% static 'js/slick.js' %}"></script>
     <script src="{% static 'js/isotope.js' %}"></script>
     <script src="{% static 'js/accordions.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/particles.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
-
-
+    
+    
     <script language = "text/Javascript">
       cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
       function clearField(t){                   //declaring the array outside of the
@@ -124,7 +125,7 @@
           cleared[t.id] = 1;  // you could use true and false, but that's more typing
           t.value='';         // with more chance of typos
           t.style.color='#fff';
-          }
+        }
       }
     </script>
     {% endblock javascripts %}
