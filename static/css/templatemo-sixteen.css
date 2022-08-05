@@ -209,7 +209,7 @@ header {
 	z-index: 99999;
 	width: 100%;
 	height: 80px;
-	background-color: #232323;
+	background-color: #181414;
 	-webkit-transition: all 0.3s ease-in-out 0s;
     -moz-transition: all 0.3s ease-in-out 0s;
     -o-transition: all 0.3s ease-in-out 0s;
@@ -254,9 +254,13 @@ header .navbar {
     -o-transition: all .3s ease 0s;
     transition: all .3s ease 0s;
 }
-.navbar .navbar-brand em {
+.navbar .navbar-brand em:nth-child(1n) {
 	font-style: normal;
-	color: #2AACFC;
+	color: #315C87;
+}
+.navbar .navbar-brand em:nth-child(2n) {
+	font-style: normal;
+	color: #F2DA00;
 }
 #navbarResponsive {
 	z-index: 999;
@@ -329,7 +333,15 @@ header .navbar {
 
 .banner-item-01 {
 	padding: 300px 0px;
-	background-image: url(../img/slide_01.png);
+	/* background-image: url(../img/slide_001.avif); */
+	background-image: url(../img/slide_01.avif);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.item {
+	background-image: url(../img/slide_01.avif);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
