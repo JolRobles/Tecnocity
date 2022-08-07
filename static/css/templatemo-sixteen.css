@@ -404,7 +404,14 @@ header .navbar {
 }
 
 .banner-item-03 {
-	background-image: url(../img/slide_03.png);
+	background-image: url(../img/slide_03.avif);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.banner-item-04 {
+	background-image: url(../img/slide_04.avif);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
