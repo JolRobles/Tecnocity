@@ -459,7 +459,7 @@ header .navbar {
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
-	bottom: 30px;
+	bottom: 5%;
 }
 
 .owl-banner .owl-dots .owl-dot {
@@ -1012,6 +1012,34 @@ footer .inner-content p a {
 
 /* Responsive Style */
 @media (max-width: 768px) {
+
+	.particulas {
+		padding-top: 80px;
+		height: 50vh;
+	}
+
+	.content .text{
+		width: 100%;
+	}
+	
+	.content .text h2{
+		font-size:large;
+	}
+	
+	.content .text h4{
+		font-size: initial;
+	}
+
+
+	#particles-js{
+		height: 50% !important;
+	}
+
+	.banner-item-01, .banner-item-02, .banner-item-03, .banner-item-04{
+		height: 45vh;
+	}
+
+
 	.banner .text-content {
 		width: 90%;
 		margin-left: 5%;
@@ -1024,12 +1052,6 @@ footer .inner-content p a {
 	.banner .text-content h2 {
 		font-size: 36px;
 		letter-spacing: 0.5px;
-	}
-
-	.banner-item-01,
-	.banner-item-02,
-	.banner-item-03 {
-		padding: 180px 0px;
 	}
 
 	.page-heading .text-content h4 {
@@ -1101,6 +1123,32 @@ footer .inner-content p a {
 }
 
 @media (max-width: 992px) {
+	.particulas {
+		padding-top: 80px;
+		height: 50vh;
+	}
+
+	.content .text{
+		width: 100%;
+	}
+	
+	.content .text h2{
+		font-size:large;
+	}
+	
+	.content .text h4{
+		font-size: initial;
+	}
+
+
+	#particles-js{
+		height: 50% !important;
+	}
+
+	.banner-item-01, .banner-item-02, .banner-item-03, .banner-item-04{
+		height: 45vh;
+	}
+
 
 	/* .navbar .navbar-brand {
 		position: absolute;
