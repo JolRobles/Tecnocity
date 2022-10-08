@@ -1,0 +1,7 @@
+.sidebar{
+    overflow-y: clip !important;
+}
+
+.navbar-success {
+    background-color: #007dd6;
+}

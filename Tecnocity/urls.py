@@ -17,9 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
     path(r'landing/', include(('landing.urls', 'landing'), namespace ='landing')),
     path(r'empresas/', include(('empresas.urls', 'empresas'), namespace ='empresas')),
     path(r'articulos/', include(('articulos.urls', 'articulos'), namespace ='articulos')),

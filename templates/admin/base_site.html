@@ -1,0 +1,9 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ 'Administrador TecnoCity'|default:_('Cat') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ 'Administrador TecnoCity'|default:_('Administrador') }}</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
