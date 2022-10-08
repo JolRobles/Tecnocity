@@ -142,10 +142,10 @@ JAZZMIN_SETTINGS = {
     "site_title": "Tecno City",
     "site_header": "Tecno City",
     "site_brand": "Tecno City",
-    "site_icon": "img/computadorasi.png",
+    "site_icon": "img/computadora_logo.png",
     # "site_icon": "images/favicon.png",
     # Add your own branding here
-    "site_logo": "img/computadorasi.png",
+    "site_logo": "img/computadora_logo.png",
     "welcome_sign": "Bienvenido admin de Tecno City",
     # Copyright on the footer
     "copyright": "Tecno City",
@@ -226,7 +226,7 @@ JAZZMIN_UI_TWEAKS = {
     "sidebar_nav_compact_style": False,
     "sidebar_nav_legacy_style": False,
     "sidebar_nav_flat_style": False,
-    "theme": "pulse",
+    "theme": "united",
     "dark_mode_theme": None,
     "button_classes": {
         "primary": "btn-primary",

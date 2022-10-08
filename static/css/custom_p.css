@@ -5,3 +5,30 @@
 .navbar-success {
     background-color: #007dd6;
 }
+
+body.jazzmin-login-page {
+    background-color: #001e33 !important;
+}
+
+body{
+    color: #000;
+}
+
+.btn-primary {
+    background-color: #001e33 !important;
+    border-color: #001e33 !important;
+
+}
+
+.login-box{
+    background-color: #fff !important;
+    padding: 20px;
+}
+
+.navbar-dark {
+    background-color: #001e33;
+}
+
+[class*=sidebar-dark-] {
+    background-color: #001e33 !important;
+}
