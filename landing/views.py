@@ -4,7 +4,7 @@ from articulos.models import *
 from empresas.models import *
 # Create your views here.
 def index(request):
-    productos = Producto.objects.all()
+    productos = list(reversed(Producto.objects.all()))[:4]
     producto_oferta = Producto.objects.filter(is_oferta=True).last()
     context = {
         'productos': productos,
