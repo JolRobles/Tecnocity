@@ -6,42 +6,51 @@
 {% include "app/slider.html" %}
 {% endblock slider %}
 {% block content %}
+<div class="separator">
+  <svg height="20%" width="100%" viewBox="0 0 12 1" preserveAspectRatio="none">
+    <path d="M0 0 l12 0" stroke="white" stroke-width="50" stroke-dasharray="20" vector-effect="non-scaling-stroke" />
+  </svg>
+</div>
+
 <div class="latest-products">
   <div class="heading">
     <h2>Nuestros Últimos Productos</h2>
   </div>
-  <a href="{% url 'landing:catalogo' %}">Ver todo el catálogo<i class="fa fa-angle-right"></i></a>
+  <!-- <a href="{% url 'landing:catalogo' %}">Ver todo el catálogo<i class="fa fa-angle-right"></i></a> -->
   <div class="product">
     {% for producto in productos %}
     <div class="product-item">
       {% if producto.img_producto %}
-      <a href="#"><img src="{{ producto.img_producto.url }}" width="100" height="200" alt="{{ producto.img_producto }}"
-          style="border-top-right-radius: 1em !important;
-          border-top-left-radius: 1em !important;"></a>
+      <a href="#"><img src="{{ producto.img_producto.url }}" style="width: 25vw; height:20vw"
+          alt="{{ producto.img_producto }}"></a>
       {% else %}
       <p>No hay una imagen disponible :c</p>
       {% endif %}
       <div class="down-content">
         <a href="#">
-          <h4>{{producto.nombre}}</h4>
+          <h4 class="hover-underline-animation">{{producto.nombre}}</h4>
+        </a>
+        <a href="#">
+          <h5>{{producto.categoria}}</h5>
         </a>
         <p>{{producto.descripcion}}</p>
-        <ul class="stars">
+        <!-- <ul class="stars">
           <li><i class="fa fa-star"></i></li>
           <li><i class="fa fa-star"></i></li>
           <li><i class="fa fa-star"></i></li>
           <li><i class="fa fa-star"></i></li>
           <li><i class="fa fa-star"></i></li>
-        </ul>
-        <span>{{producto.categoria}}</span>
+        </ul> -->
+        <!-- <span>{{producto.categoria}}</span> -->
       </div>
     </div>
     {% endfor %}
+    <button class="boton-grande">Ver Todos Nuestros Productos</button>
+    </button>
+
   </div>
 
-</div>
-
-<div class="best-features">
+  <!-- <div class="best-features">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -74,26 +83,58 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
-<div class="call-to-action">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="inner-content">
-          <div class="row">
-            <div class="col-md-8">
-              <h4>Eficiente, Único y de Calidad <em>Tecno_city</em></h4>
-              <p>Un camino de 1000 millas comienza con un paso</p>
-            </div>
-            <div class="col-md-4">
-              <a href="#" class="filled-button">Tú puedes</a>
+
+  <div class="best-features">
+    <div class="left-block">
+      <h2>Las Mejores Ofertas</h2>
+      <h4 class="hover-underline-animation">{{producto_oferta}}</h4>
+      <p>{{producto_oferta.descripcion}}</p>
+      <ul class="featured-list">
+        <li><a href="#">{{producto_oferta.categoria}}</a></li>
+        <li><a href="#">{{producto_oferta.marca}}</a></li>
+        <!-- <li><a href="#">{{producto_oferta.caracteristicas}}</a></li> -->
+      </ul>
+      <a href="about.html" class="filled-button boton-grande">Ver más ofertas</a>
+    </div>
+    <div class="right-block">
+      <div class="right-image">
+        {% if producto_oferta.img_producto %}
+        <a href="#"><img src="{{ producto_oferta.img_producto.url }}"
+            alt="{{ producto_oferta.img_producto }}"></a>
+        {% else %}
+        No hay imagen
+        <img src="{% static 'img/feature-image.jpg' %}" alt="">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="call-to-action">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="inner-content">
+            <div class="row">
+              <div class="col-md-8">
+                <h4>Eficiente, Único y de Calidad <em>Tecno_city</em></h4>
+                <p>Un camino de 1000 millas comienza con un paso</p>
+              </div>
+              <div class="col-md-4">
+                <a href="#" class="filled-button">Tú puedes</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div> -->
+
+  <div class="container-call-to-action">
+    <h4>Eficiente, Único y de Calidad <em>TECNO</em> <em>CITY</em></h4>
+    <h4>Un camino de 1000 millas comienza con un paso</h4>
+    <h3>TÚ PUEDES</h3>
   </div>
-</div>
-{% endblock content %}
+  {% endblock content %}
