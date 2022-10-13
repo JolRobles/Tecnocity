@@ -3,7 +3,7 @@
 {% load bootstrap5 %}
 {% block content %}
 <!-- <div id="particles-js"></div> -->
-<div class="page-heading products-heading header-text">
+<!-- <div class="page-heading products-heading header-text">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -14,80 +14,95 @@
       </div>
     </div>
   </div>
+</div> -->
+
+
+<div class="particulas">
+  <div id="particles-js" style="z-index: -1; background-color: #001c3a; height: calc(100% - 80px);"></div>
+  <div class="banner-products">
+    <div class="content">
+      <div class="text">
+        <h2>CATÁLOGO</h2>
+      </div>      
+    </div>
+  </div>
+
 </div>
 
-    <div class="products">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="filters">
-              <ul>
-                <li class="active" data-filter="*">Todos</li>
-                {% for categoria in categorias %}
-                <li data-filter=".{{categoria}}">{{ categoria }}</li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="filters-content">
-                <div class="row grid">
-                  {% for producto in productos %}
-                    <div class="col-lg-4 col-md-4 all {{producto.categoria}}">
-                      <div class="product-item">
-                          {% if producto.img_producto %}
-                              <a href="#"><img src="{{ producto.img_producto.url }}" width="100" height="250" alt="{{ producto.img_producto }}"
-                                style="border-radius: 1em !important;"></a>
-                          {% else %}
-                              No hay imagen
-                          {% endif %}
-                        <div class="down-content">
-                          <a href="#"><h4>{{producto.nombre}}</h4></a>
-                          <p>{{producto.descripcion}}</p>
-                          <ul class="stars">
-                            <li><i>Stock</i></li>
-                            <li>{{producto.stock}}</li>
-                          </ul>
-                          <span>{{producto.marca}}</span>
-                        </div>
-                      </div>
-                    </div>
-                    {% endfor %}
+<div class="products">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="filters">
+          <ul>
+            <li class="active" data-filter="*">Todos</li>
+            {% for categoria in categorias %}
+            <li data-filter=".{{categoria}}">{{ categoria }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="filters-content">
+          <div class="row grid">
+            {% for producto in productos %}
+            <div class="col-lg-4 col-md-4 all {{producto.categoria}}">
+              <div class="product-item">
+                {% if producto.img_producto %}
+                <a href="#"><img src="{{ producto.img_producto.url }}" width="100" height="250"
+                    alt="{{ producto.img_producto }}" style="border-radius: 1em !important;"></a>
+                {% else %}
+                No hay imagen
+                {% endif %}
+                <div class="down-content">
+                  <a href="#">
+                    <h4>{{producto.nombre}}</h4>
+                  </a>
+                  <p>{{producto.descripcion}}</p>
+                  <ul class="stars">
+                    <li><i>Stock</i></li>
+                    <li>{{producto.stock}}</li>
+                  </ul>
+                  <span>{{producto.marca}}</span>
                 </div>
+              </div>
             </div>
-          </div>
-          <div class="col-md-12">
-            <ul class="pages">
-              <li><a href="#">1</a></li>
-              <li class="active"><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-            </ul>
+            {% endfor %}
           </div>
         </div>
       </div>
+      <div class="col-md-12">
+        <ul class="pages">
+          <li><a href="#">1</a></li>
+          <li class="active"><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+        </ul>
+      </div>
     </div>
+  </div>
+</div>
 
-    <div class="happy-clients">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>Nuestras Marcas</h2>
-            </div>
+<div class="happy-clients">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading">
+          <h2>Nuestras Marcas</h2>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="owl-clients owl-carousel">
+          {% for marca in marcas %}
+          <div class="client-item">
+            <a href="#"><img src="{{ marca.img_marca.url }}" width="50" height="100" alt="{{ marca.img_marca }}"
+                style="border-radius: 1em !important;"></a>
           </div>
-          <div class="col-md-12">
-            <div class="owl-clients owl-carousel">
-                {% for marca in marcas %}
-                <div class="client-item">
-                <a href="#"><img src="{{ marca.img_marca.url }}" width="50" height="100" alt="{{ marca.img_marca }}"
-                  style="border-radius: 1em !important;"></a>
-                </div>
-                {% endfor %}
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
-    {% endblock content %}
+  </div>
+</div>
+{% endblock content %}

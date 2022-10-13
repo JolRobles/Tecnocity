@@ -523,6 +523,15 @@ header .navbar {
 	background-position: center center;
 }
 
+.banner-products{
+	width: 100%;
+	height: calc(100vh - 80px);
+	background-image: url(../img/catalogo.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
 .banner .banner-item {
 	max-height: 600px;
 }
