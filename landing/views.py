@@ -22,6 +22,12 @@ def catalogo(request):
         'categorias' : categorias,
         'marcas' : marcas,
     }
+    print("awui estoy: ", len(productos))
+    print("awui estoy: ", productos[0].categoria)
+    print("awui estoy: ", productos[0].nombre)
+
+    print("awui estoy: ", len(categorias))
+
     return render(request, 'app/products.html', context)
 
 def nosotros(request):
