@@ -31,7 +31,7 @@
 
   <div class="filters-content">
     {% for producto in productos %}
-    <div class="product-item">
+    <div class="product-item .{{categoria}}">
       {% if producto.img_producto %}
       <a href="#"><img src="{{ producto.img_producto.url }}" width="100" height="250" alt="{{ producto.img_producto }}"
           style="border-radius: 1em !important;"></a>
