@@ -59,7 +59,23 @@ body {
 	max-width: 30%;
 }
 
-.down-content-footer{
+.grid-item {
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	border: 1px solid rgb(19, 18, 18);
+	margin-bottom: 30px;
+	flex: 1 0 15%;
+	margin: 1vw;
+	min-width: 30%;
+	margin-top: 3%;
+	justify-content: flex-start;
+	align-items: center;
+	height: 22em;
+	max-width: 30%;
+}
+
+.down-content-footer {
 	color: #000;
 	margin-top: auto;
 	display: flex;
@@ -67,19 +83,36 @@ body {
 	width: 100%;
 }
 
-.product-item .marca{
+.product-item .marca {
 	color: #000;
 	align-self: flex-end;
 }
-.down-content-footer ul li{
+
+.grid-item .marca {
+	color: #000;
+	align-self: flex-end;
+}
+
+.down-content-footer ul li {
 	float: left;
 	font-size: 0.8em;
 }
 
-.down-content-footer span{
+.down-content-footer span {
 	font-size: 0.8em;
 }
+
 .filters-content {
+	background-color: #001E33;
+	padding: 3% 1%;
+	border-radius: 20px;
+	width: 90%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.isotope {
 	background-color: #001E33;
 	padding: 3% 1%;
 	border-radius: 20px;
@@ -95,6 +128,12 @@ body {
 	width: 100%;
 }
 
+.grid-item .down-content {
+	padding: 0 15px 15px 15px;
+	position: relative;
+	width: 100%;
+}
+
 .product-item img {
 	margin: 5% 5% 0 5%;
 	width: 100%;
@@ -102,6 +141,14 @@ body {
 	max-width: 80%;
 	overflow: hidden;
 }
+
+.grid-item img {
+	margin: 5% 5% 0 5%;
+	width: 100%;
+	height: 15vw;
+	max-width: 80%;
+	overflow: hidden;
+} 
 
 p {
 	margin-bottom: 0px;
@@ -682,7 +729,26 @@ header .navbar {
 	text-align: left;
 }
 
+.grid-item .down-content h4 {
+	font-size: 17px;
+	font-weight: bold;
+	color: #1877F2;
+	margin-bottom: 5px;
+	text-align: left;
+}
+
 .product-item .down-content h5 {
+	font-size: 12px;
+	font-weight: bold;
+	color: #1877F2;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+
+.grid-item .down-content h5 {
 	font-size: 12px;
 	font-weight: bold;
 	color: #1877F2;
@@ -700,7 +766,19 @@ header .navbar {
 	color: #121212;
 }
 
+.grid-item .down-content h6 {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	font-size: 18px;
+	color: #121212;
+}
+
 .product-item .down-content p {
+	margin-bottom: 20px;
+}
+
+.grid-item .down-content p {
 	margin-bottom: 20px;
 }
 
@@ -708,7 +786,16 @@ header .navbar {
 	display: inline-block;
 }
 
+.grid-item .down-content ul li {
+	display: inline-block;
+}
+
 .product-item .down-content ul li i {
+	color: #2AACFC;
+	font-size: 14px;
+}
+
+.grid-item .down-content ul li i {
 	color: #2AACFC;
 	font-size: 14px;
 }
@@ -722,6 +809,14 @@ header .navbar {
 	font-weight: 500;
 }
 
+.grid-item .down-content span {
+	position: absolute;
+	right: 30px;
+	bottom: 30px;
+	font-size: 13px;
+	color: #2AACFC;
+	font-weight: 500;
+}
 
 .hover-underline-animation {
 	display: inline-block;
@@ -1282,6 +1377,11 @@ footer .inner-content p a {
 		max-height: 400px;
 	}
 
+	.grid-item {
+		min-width: 90%;
+		max-height: 400px;
+	}
+
 	.text {
 		width: 100%;
 	}
@@ -1350,13 +1450,29 @@ footer .inner-content p a {
 		margin-bottom: 20px !important;
 	}
 
+	.grid-item .down-content h4 {
+		margin-bottom: 20px !important;
+	}
+
 	.product-item .down-content h6 {
 		position: absolute !important;
 		top: 30px !important;
 		right: 30px !important;
 	}
 
+	.grid-item .down-content h6 {
+		position: absolute !important;
+		top: 30px !important;
+		right: 30px !important;
+	}
+
 	.product-item .down-content span {
+		position: absolute !important;
+		right: 30px !important;
+		bottom: 30px !important;
+	}
+
+	.grid-item .down-content span {
 		position: absolute !important;
 		right: 30px !important;
 		bottom: 30px !important;
@@ -1476,6 +1592,10 @@ footer .inner-content p a {
 		margin-bottom: 10px;
 	}
 
+	.grid-item .down-content h4 {
+		margin-bottom: 10px;
+	}
+
 	.product-item .down-content h6 {
 		position: relative;
 		top: 0;
@@ -1483,7 +1603,20 @@ footer .inner-content p a {
 		margin-bottom: 20px;
 	}
 
+	.grid-item .down-content h6 {
+		position: relative;
+		top: 0;
+		right: 0;
+		margin-bottom: 20px;
+	}
+
 	.product-item .down-content span {
+		position: relative;
+		right: 0;
+		bottom: 0;
+	}
+
+	.grid-item .down-content span {
 		position: relative;
 		right: 0;
 		bottom: 0;

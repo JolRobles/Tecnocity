@@ -13,20 +13,17 @@ def index(request):
     }
 
     return render(request, 'app/index.html', context)
+
 def catalogo(request):
     productos = Producto.objects.all()
     categorias = Categoria.objects.all()
     marcas = Marca.objects.all()
+
     context = {
         'productos': productos,
         'categorias' : categorias,
         'marcas' : marcas,
     }
-    print("awui estoy: ", len(productos))
-    print("awui estoy: ", productos[0].categoria)
-    print("awui estoy: ", productos[0].nombre)
-
-    print("awui estoy: ", len(categorias))
 
     return render(request, 'app/products.html', context)
 

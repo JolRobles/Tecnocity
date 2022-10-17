@@ -29,9 +29,9 @@
     </ul>
   </div>
 
-  <div class="filters-content">
+  <div class="grid isotope filters-content">
     {% for producto in productos %}
-    <div class="product-item .{{categoria}}">
+    <div class="product-item {{producto.categoria}}">
       {% if producto.img_producto %}
       <a href="#"><img src="{{ producto.img_producto.url }}" width="100" height="250" alt="{{ producto.img_producto }}"
           style="border-radius: 1em !important;"></a>
@@ -53,18 +53,56 @@
       </div>
     </div>
     {% endfor %}
-    <div class="col-md-12">
-      <ul class="pages" style="color: #fff;">
-        <li><a href="#">1</a></li>
-        <li class="active"><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-      </ul>
-    </div>
   </div>
 
+  <div class="col-md-12">
+    <ul class="pages" style="color: #fff;">
+      <li><a href="#">1</a></li>
+      <li class="active"><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+    </ul>
+  </div>
+</div>
 
+
+
+
+
+<div class="products">
+  <ul class="filters">
+    <li><a href="javascript:void(0);" data-filter="*">Todos</a></li>
+    {% for categoria in categorias %}
+    <li><a href="javascript:void(0);" data-filter="{{categoria}}">{{ categoria }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <div id="container" class="isotope">
+    {% for producto in productos %}
+    <div class="grid-item" data-filter="{{producto.categoria}}">
+      {% if producto.img_producto %}
+      <a href="#"><img src="{{ producto.img_producto.url }}" width="100" height="250" alt="{{ producto.img_producto }}"
+          style="border-radius: 1em !important;"></a>
+      {% else %}
+      No hay imagen
+      {% endif %}
+      <div class="down-content">
+        <a href="#">
+          <h4>{{producto.nombre}}</h4>
+        </a>
+        <p>{{producto.descripcion}}</p>
+      </div>
+      <div class="down-content-footer">
+        <ul class="stars">
+          <li><i>Stock: </i></li>
+          <li>{{producto.stock}}</li>
+        </ul>
+        <span class="marca">{{producto.marca}}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
 </div>
 
 <div class="happy-clients">
