@@ -1,9 +1,5 @@
 jQuery(document).ready(function ($) {
-
-
     "use strict";
-
-
 
     $(function () {
         $("#tabs").tabs();
@@ -41,7 +37,7 @@ jQuery(document).ready(function ($) {
             margin: 30,
             autoplay: true,
             smartSpeed: 700,
-            autoplayTimeout: 6000,
+            autoplayTimeout: 3000,
             responsive: {
                 0: {
                     items: 1,
@@ -139,152 +135,15 @@ jQuery(document).ready(function ($) {
         nextArrow: '<button class="NextArrow"></button>',
     });
 
-    // $('.filters ul li').click(function () {
-    //     $('.filters ul li').removeClass('active');
-    //     $(this).addClass('active');
-    //     console.log("si se quito");
-
-    //     var data = $(this).attr('data-filter');
-    //     console.log(data);
-    //     $grid.isotope({
-    //         filter: data
-    //     });
-    //     setPagination();
-    // });
-    // var itemSelector = '.product-item'; 
-
-    // var $grid = $(".grid").isotope({
-    //     itemSelector: itemSelector,
-    //     percentPosition: true,
-    //     // masonry: {
-    //     //     columnWidth: ".all"
-    //     // }
-    // });
-
-    // //Ascending order
-    // var responsiveIsotope = [
-    //     [480, 4],
-    //     [720, 6]
-    // ];
-
-    // var itemsPerPageDefault = 3;
-    // console.log(itemsPerPageDefault);
-    // var itemsPerPage = defineItemsPerPage();
-    // var currentNumberPages = 1;
-    // var currentPage = 1;
-    // var currentFilter = '*';
-    // var filterAtribute = 'data-filter';
-    // var pageAtribute = 'data-page';
-    // var pagerClass = 'isotope-pager';
-
-    // function changeFilter(selector) {
-    //     $grid.isotope({
-    //         filter: selector
-    //     });
-    // }
-
-    // function getFilterSelector() {
-    //     var selector = itemSelector;
-    //     if (currentFilter != '*') {
-    //         selector += `[${filterAtribute}~="${currentFilter}"]`
-    //     }
-    //     return selector;
-    // }
-
-    // function goToPage(n) {
-    //     currentPage = n;
-
-    //     var selector = getFilterSelector();
-    //     selector += `[${pageAtribute}="${currentPage}"]`;
-
-    //     changeFilter(selector);
-    // }
-
-    // function defineItemsPerPage() {
-    //     var pages = itemsPerPageDefault;
-
-    //     for (var i = 0; i < responsiveIsotope.length; i++) {
-    //         if ($(window).width() <= responsiveIsotope[i][0]) {
-    //             pages = responsiveIsotope[i][1];
-    //             break;
-    //         }
-    //     }
-    //     return pages;
-    // }
-
-    // function setPagination() {
-    //     var SettingsPagesOnItems = function () {
-    //         // var itemsLength = $grid.children(itemSelector).length;
-    //         var itemsLength = $('.product-item:not([style*="display: none"])').length;
-    //         console.log("gaa " + itemsLength);
-    //         var pages = Math.ceil(itemsLength / itemsPerPage);
-    //         var item = 1;
-    //         var page = 1;
-    //         var selector = getFilterSelector();
-
-    //         $grid.children(selector).each(function () {
-    //             if (item > itemsPerPage) {
-    //                 page++;
-    //                 item = 1;
-    //             }
-    //             $(this).attr(pageAtribute, page);
-    //             item++;
-    //         });
-
-    //         currentNumberPages = page;
-
-    //     }();
-
-    //     var CreatePagers = function () {
-
-    //         var $isotopePager = ($('.' + pagerClass).length == 0) ? $('<div class="' + pagerClass + '"></div>') : $('.' + pagerClass);
-
-    //         $isotopePager.html('');
-
-    //         for (var i = 0; i < currentNumberPages; i++) {
-    //             var $pager = $('<a href="javascript:void(0);" class="pager" ' + pageAtribute + '="' + (i + 1) + '"></a>');
-    //             $pager.html(i + 1);
-
-    //             $pager.click(function () {
-    //                 var page = $(this).eq(0).attr(pageAtribute);
-    //                 goToPage(page);
-    //             });
-
-    //             $pager.appendTo($isotopePager);
-    //         }
-    //         $grid.after($isotopePager);
-    //     }();
-    // }
-
-    // setPagination();
-    // goToPage(1);
-
-    // //Adicionando Event de Click para as categorias
-    // // $('.filters a').click(function () {
-    // //     var filter = $(this).attr(filterAtribute);
-    // //     currentFilter = filter;
-    // //     setPagination();
-    // //     goToPage(1);
-    // // });
-
-    // //Evento Responsivo
-    // $(window).resize(function () {
-    //     itemsPerPage = defineItemsPerPage();
-    //     setPagination();
-    //     goToPage(1);
-    // });
-
-
     $(document).ready(function () {
-
         var itemSelector = '.grid-item';
 
         var $container = $('#container').isotope({
             itemSelector: itemSelector,
-            masonry: {
-                // columnWidth: itemSelector,
-                // isFitWidth: true
-            }
+            // masonry: {
+            //     // columnWidth: itemSelector,
+            //     // isFitWidth: true
+            // }
         });
 
         //Ascending order
@@ -293,7 +152,7 @@ jQuery(document).ready(function ($) {
             [720, 6]
         ];
 
-        var itemsPerPageDefault = 5;
+        var itemsPerPageDefault = 6;
         var itemsPerPage = defineItemsPerPage();
         var currentNumberPages = 1;
         var currentPage = 1;
@@ -333,25 +192,17 @@ jQuery(document).ready(function ($) {
                     pages = responsiveIsotope[i][1];
                     break;
                 }
-
-
-
             }
-
             return pages;
         }
 
         function setPagination() {
-
             var SettingsPagesOnItems = function () {
-
                 var itemsLength = $container.children(itemSelector).length;
-
                 var pages = Math.ceil(itemsLength / itemsPerPage);
                 var item = 1;
                 var page = 1;
                 var selector = getFilterSelector();
-
                 $container.children(selector).each(function () {
                     if (item > itemsPerPage) {
                         page++;
