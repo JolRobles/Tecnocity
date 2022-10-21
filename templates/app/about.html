@@ -2,125 +2,119 @@
 {% load static %}
 {% load bootstrap5 %}
 {% block content %}
-<div id="particles-js"></div>
-    <div class="page-heading about-heading header-text">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="text-content">
-              <h4>Sobre Nosotros</h4>
-              <h2>Tecno_city</h2>
-            </div>
-          </div>
-        </div>
+<div class="particulas" style="height: calc(85vh - 80px); padding-top: 80px;">
+  <div id="particles-js" style="z-index: -1; background-color: #001c3a; height: calc(85vh - 80px) !important;"></div>
+  <div class="banner-aboutus">
+    <div class="content-slider" style="display: flex; justify-content: flex-start; align-items: center;">
+      <div class="text"
+        style="display: flex; justify-content: center; align-items: center; flex-direction: column; width: 100%;">
+        <h2>SOBRE NOSOTROS</h2>
+        <h2>Tecno City</h2>
       </div>
     </div>
+  </div>
+</div>
 
 
-    <div class="best-features about-features">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>Historia</h2>
-            </div>
+<div class="gradient" style="background: linear-gradient(180deg, #0095fd 0%, rgba(15, 6, 54, 1) 100%);">
+  <div class="about-features" style="padding: 5% 2% 2% 2%; margin-top: 0; display: flex; justify-content: center;">
+    <div class="container-history">
+      <div class="section-heading">
+        <h2>Historia</h2>
+      </div>
+
+      {% for historia in historias %}
+      <div class="history-content">
+        <div class="left-image">
+          {% if historia.imagen %}
+          <a href="#"><img src="{{ historia.imagen.url }}" alt="{{ historia.imagen }}"
+              style="border-radius: 1em !important; width: 25vw; padding: 1%; min-width: 300px;"></a>
+          {% else %}
+          No hay imagen
+          {% endif %}
+        </div>
+
+        <div class="right-content" style="width: 50%; margin: 2%">
+          <h4 style="color: #000020;"">{{historia.titulo}}</h4>
+          <p>{{historia.texto}}</p>
+          <ul class="social-icons">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+          </ul>
+        </div>
+
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="team-members">
+    <div class="container">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="section-heading" style="border-radius: 0; margin-bottom: 2%;">
+            <h2>EQUIPO</h2>
           </div>
-          {% for historia in historias %}
-
-          <div class="col-md-6">
-            <div class="right-image">
-              {% if historia.imagen %}
-                  <a href="#"><img src="{{ historia.imagen.url }}"  width="250" height="250" alt="{{ historia.imagen }}"
-                    style="border-radius: 1em !important;"></a>
+        </div>
+        {% for team in teams %}
+        <div class="col-md-4">
+          <div class="team-member">
+            <div class="thumb-container">
+              {% if team.imagen %}
+              <a href="#"><img src="{{ team.imagen.url }}" alt="{{ team.imagen }}"
+                  style="border-radius: 1em !important;"></a>
               {% else %}
-                  No hay imagen
+              No hay imagen
               {% endif %}
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="left-content">
-              <h4>{{historia.titulo}}</h4>
-              <p>{{historia.texto}}</p>
-              <ul class="social-icons">
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="#"><i class="fa fa-behance"></i></a></li>
-              </ul>
-            </div>
-          </div>
-          <br>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-
-
-    <div class="team-members">
-      <div class="container">
-        <div class="row col-md-12">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>EQUIPO</h2>
-            </div>
-          </div>
-          {% for team in teams %}
-          <div class="col-md-4">
-            <div class="team-member">
-              <div class="thumb-container">
-                {% if team.imagen %}
-                    <a href="#"><img src="{{ team.imagen.url }}"  alt="{{ team.imagen }}"
-                      style="border-radius: 1em !important;"></a>
-                {% else %}
-                    No hay imagen
-                {% endif %}
-                <div class="hover-effect">
-                  <div class="hover-content">
-                    <ul class="social-icons">
-                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                    </ul>
-                  </div>
+              <div class="hover-effect">
+                <div class="hover-content">
+                  <ul class="social-icons">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                  </ul>
                 </div>
               </div>
-              <div class="down-content">
-                <h4>{{team.nombre}}</h4>
-                <span>{{team.cargo_ocupado}}</span>
-                <p>{{team.descripción}}</p>
-              </div>
+            </div>
+            <div class="down-content">
+              <h4>{{team.nombre}}</h4>
+              <span>{{team.cargo_ocupado}}</span>
+              <p>{{team.descripción}}</p>
             </div>
           </div>
-          {% endfor %}
+        </div>
+        {% endfor %}
       </div>
     </div>
-
-
-    <div class="services">
-      <div class="container">
-        <div class="row">
-          {% for plan in planes %}
-          <div class="col-md-4">
-            <div class="service-item">
-              <div class="icon">
-                {% if plan.imagen %}
-                    <a href="#"><img src="{{ plan.imagen.url }}" width="100" height="100"  alt="{{ plan.imagen }}"
-                      style="border-radius: 1em !important;"></a>
-                {% else %}
-                    No hay imagen
-                {% endif %}
-              </div>
-              <div class="down-content">
-                <h4>{{plan.get_tipo_display}}</h4>
-                <p>{{plan.descripcion}}</p>
-              </div>
-            </div>
+  </div>
+</div>
+<div class="services">
+  <div class="container">
+    <div class="row">
+      {% for plan in planes %}
+      <div class="col-md-4">
+        <div class="service-item">
+          <div class="icon">
+            {% if plan.imagen %}
+            <a href="#"><img src="{{ plan.imagen.url }}" width="100" height="100" alt="{{ plan.imagen }}"
+                style="border-radius: 1em !important;"></a>
+            {% else %}
+            No hay imagen
+            {% endif %}
           </div>
-          {% endfor %}
+          <div class="down-content">
+            <h4>{{plan.get_tipo_display}}</h4>
+            <p>{{plan.descripcion}}</p>
+          </div>
         </div>
       </div>
+      {% endfor %}
     </div>
+  </div>
+</div>
 
 
 {% endblock content %}

@@ -54,6 +54,14 @@
   <div class="best-features">
     <div class="left-block">
       <h2>Las Mejores Ofertas</h2>
+      <div class="image-hidden" style="display: none;">
+        {% if producto_oferta.img_producto %}
+        <a href="#"><img src="{{ producto_oferta.img_producto.url }}" alt="{{ producto_oferta.img_producto }}"></a>
+        {% else %}
+        No hay imagen
+        <img src="{% static 'img/feature-image.jpg' %}" alt="">
+        {% endif %}
+      </div>
       <h4 class="hover-underline-animation">{{producto_oferta}}</h4>
       <p>{{producto_oferta.descripcion}}</p>
       <ul class="featured-list">
@@ -66,8 +74,7 @@
     <div class="right-block">
       <div class="right-image">
         {% if producto_oferta.img_producto %}
-        <a href="#"><img src="{{ producto_oferta.img_producto.url }}"
-            alt="{{ producto_oferta.img_producto }}"></a>
+        <a href="#"><img src="{{ producto_oferta.img_producto.url }}" alt="{{ producto_oferta.img_producto }}"></a>
         {% else %}
         No hay imagen
         <img src="{% static 'img/feature-image.jpg' %}" alt="">
@@ -78,7 +85,7 @@
 
   <div class="container-call-to-action">
     <h4>Eficiente, Único y de Calidad <em>TECNO</em> <em>CITY</em></h4>
-    <h4>Un camino de 1000 millas comienza con un paso</h4>
+    <h4 style="margin-bottom: 0;">Un camino de 1000 millas comienza con un paso</h4>
     <h3>TÚ PUEDES</h3>
   </div>
   {% endblock content %}
