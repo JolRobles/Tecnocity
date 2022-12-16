@@ -1,130 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
-{% load static %}
-{% load bootstrap5 %}
-{% block head %}
-
-<head>
-  {% block meta %}
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  {% endblock meta %}
-  <title>TecnoCity|{% block title %}{% endblock %}</title>
-
-  {% block stylesheets %}
-
-  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
-    rel="stylesheet">
-  <link href="{% static 'vendors/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-
-  <!-- Additional CSS Files -->
-  <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
-  <link rel="stylesheet" href="{% static 'css/templatemo-sixteen.css' %}">
-  <link rel="stylesheet" href="{% static 'css/owl.css' %}">
-  <link rel="stylesheet" href="{% static 'css/whatsapp.css' %}">
-
-  <link rel="stylesheet" href="{% static 'css/templatemo-style.css' %}">
-  {% endblock stylesheets %}
-</head>
-{% endblock head %}
-
-<body>
-
+<html lang="es">
+  {% load static %}
+  {% load bootstrap5 %}
+  {% block head %}
+    <head>
+      {% block meta %}
+        <meta charset="utf-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Local de Tecnologia">
+        <meta name="author" content="Tecnocity">
+      {% endblock meta %}
+      <title>
+        {% block title %}Tecnocity{% endblock title %}
+      </title>
+      {% block stylesheets %}
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+              rel="stylesheet">
+        <link href="{% static 'vendors/bootstrap/css/bootstrap.min.css' %}"
+              rel="stylesheet">
+        <!-- Additional CSS Files -->
+        <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
+        <link rel="stylesheet" href="{% static 'css/templatemo-sixteen.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.css' %}">
+        <link rel="stylesheet" href="{% static 'css/whatsapp.css' %}">
+        <link rel="stylesheet" href="{% static 'css/templatemo-style.css' %}">
+      {% endblock stylesheets %}
+    </head>
+  {% endblock head %}
   {% block body %}
-  <!-- ***** Preloader Start ***** -->
-  <!-- necesario para que se meustra una pantalla de carga antes de que se cargue la pagina -->
-  <div id="preloader">
-    <div class="jumper">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
-  {% block header %}
-  <!-- Header -->
-  <header class="">
-    <nav class="navbar navbar-expand-lg">
-      <a class="navbar-brand" href="{% url 'landing:index' %}"><em>TECNO</em> <em>CITY</em></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item ">
-            <a class="nav-link" href="{% url 'landing:index' %}">Inicio
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'landing:catalogo' %}">Catálogo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'landing:nosotros' %}">Sobre nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'landing:contacto' %}">Contáctanos</a>
-          </li>
-        </ul>
+    <body>
+      <!-- ***** Preloader Start ***** -->
+      <!-- necesario para que se meustra una pantalla de carga antes de que se cargue la pagina -->
+      <div id="preloader">
+        <div class="jumper"></div>
       </div>
-    </nav>
-
-    <a href="https://api.whatsapp.com/send?phone=593983333557" class="whatsapp" target="_blank"> <i
-        class="fa fa-whatsapp whatsapp-icon"></i></a>
-  </header>
-  {% endblock header %}
-
-  {% block slider %}
-
-  {% endblock slider %}
-
-  {% block content %}
-
-  {% endblock content %}
-  </main>
-  {% block footer %}
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="inner-content">
-            <p>JYSYS| todos los derechos reservados | +593981538762
-              <br>
-              Innovamos tus sueños: <a rel="nofollow noopener"
-                href="https://www.facebook.com/jysysloja/?modal=admin_todo_tour" target="_blank">Jysys</a>
-            </p>
+      <!-- ***** Preloader End ***** -->
+      {% block header %}
+        <!-- Header -->
+        <header>
+          <nav class="navbar navbar-expand-md">
+            <a class="navbar-brand" href="{% url 'landing:index' %}"><em>TECNO</em> <em>CITY</em></a>
+            <button class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item ">
+                  <a class="nav-link" href="{% url 'landing:index' %}">Inicio
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'landing:catalogo' %}">Catálogo</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'landing:nosotros' %}">Sobre nosotros</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'landing:contacto' %}">Contáctanos</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <a href="https://api.whatsapp.com/send?phone=593983333557"
+             class="whatsapp"
+             target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
+        </header>
+      {% endblock header %}
+      {% block slider %}
+      {% endblock slider %}
+      {% block content %}
+      {% endblock content %}
+    </main>
+    {% block footer %}
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="inner-content">
+                <p>
+                  JYSYS| todos los derechos reservados | +593981538762
+                  <br>
+                  Innovamos tus sueños: <a rel="nofollow noopener"
+    href="https://www.facebook.com/jysysloja/?modal=admin_todo_tour"
+    target="_blank">Jysys</a>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </footer>
-  {% endblock footer %}
-
+      </footer>
+    {% endblock footer %}
   {% endblock body %}
-
-
-
 </body>
 {% block javascripts %}
-<!-- Bootstrap core JavaScript -->
-<script src="{% static 'vendors/jquery/jquery.min.js' %}"></script>
-<script src="{% static 'vendors/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-
-
-<!-- Additional Scripts -->
-<script src="{% static 'js/owl.js' %}"></script>
-<script src="{% static 'js/custom.js' %}"></script>
-<script src="{% static 'js/slick.js' %}"></script>
-<script src="{% static 'js/isotope.js' %}"></script>
-<script src="{% static 'js/accordions.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/particles.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/app.js' %}"></script>
-
-
-<script language="text/Javascript">
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendors/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendors/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <!-- Additional Scripts -->
+  <script src="{% static 'js/owl.js' %}"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
+  <script src="{% static 'js/slick.js' %}"></script>
+  <script src="{% static 'js/isotope.js' %}"></script>
+  <script src="{% static 'js/accordions.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/particles.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+  <script language="text/Javascript">
   cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
   function clearField(t) {                   //declaring the array outside of the
     if (!cleared[t.id]) {                      // function makes it static and global
@@ -133,7 +121,6 @@
       t.style.color = '#fff';
     }
   }
-</script>
+  </script>
 {% endblock javascripts %}
-
 </html>
